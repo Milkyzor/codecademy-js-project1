@@ -1,27 +1,29 @@
 /*
 // PLAN:
 
-1 - Fictional Facts Generator
+1 - Fictional Facts Generator.
 
-2 - Facts will be based on When? What? Why? And how it happened?
+2 - Facts will be based on When? What? Why? And how it happened? Dramatic or Funny Facts?
+        Facts -> Dramatic? Funny? -> When? What? Why? How? -> Fact (return string)
+            Futuristic World > Single Sentences > Build Fact Template > Create list of elements > Need to make sense together
 
 3 - Include comments in your code for clarity.
 
-4 - Create and array of strings for each category
+4 - Create and array of strings for each category.
 
-5 - Develop function to randomly select each component of the message.
+5 - Functions:
+        randomSelector();
+        submitString(category);
+        pickMood();
+        createFact(mood, when, what, why, how);
 
-6 - Create a function to combine these components into a complete message.
+6 - Run your program multiple times and check for varied and random outputs.
 
-7 - Ensure the syntax is correct and the program runs without errors.
+7 - Use Git commands to track changes (git add, git commit) and regularly push updates to GitHub.
 
-8 - Run your program multiple times and check for varied and random outputs.
+8 - Refactor code for efficiency and readability.
 
-9 - Use Git commands to track changes (git add, git commit) and regularly push updates to GitHub.
+9 - Write a README file explaining your program, how to run it, and its features.
 
-10 - Refactor code for efficiency and readability.
-
-11 - Write a README file explaining your program, how to run it, and its features.
-
-12 - Do a final round of testing.
+10 - Do a final round of testing.
 */
