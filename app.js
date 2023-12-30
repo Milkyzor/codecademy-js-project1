@@ -1,38 +1,3 @@
-/*
-// PLAN:
-
-1 - Fictional Facts Generator.
-
-2 - Facts will be based on When? What? Why? And how it happened? Dramatic or Funny Facts
-        Facts -> Dramatic? Funny? -> When? What? Why? How? -> Fact (return string)
-            Futuristic World > Single Sentences > Build Fact Template > Create list of elements > Need to make sense together
-                `In ${year}, ${what} ${how}. ${why}!`
-
-3 - Include comments in your code for clarity.
-
-4 - Create and array of strings for each category.
-
-5 - Functions:
-        randomSelector(array);
-        pickMood();
-        factFactory (mood, {when, what, why, how});
-            isFactRepetitive(mood, when, what, why, how)
-            doesFactExist(fact, facts);
-            pushAndReturFact(fact);
-        submitString(category);
-
-6 - Run your program multiple times and check for varied and random outputs.
-
-7 - Use Git commands to track changes (git add, git commit) and regularly push updates to GitHub.
-
-8 - Refactor code for efficiency and readability.
-
-9 - Write a README file explaining your program, how to run it, and its features.
-
-10 - Do a final round of testing.
-*/
-
-
 // ARRAYS TO WORK
 let years = [2052, 2073, 2056, 2080, 2059, 2030, 2091, 2093, 2075, 2054, 2033, 2087, 2099, 2086, 2088, 2069, 2079, 2044, 2050, 2066, 2034, 2072, 2084, 2089, 2038, 2032, 2057, 2081, 2062, 2074, 2082, 2040, 2077, 2098, 2070, 2042, 2036, 2055, 2045, 2067];
 
@@ -269,6 +234,9 @@ const factFactory = () => {
 
 // Convert fact (added manually) to factFactory template.
 function processFact(fact) {
+    //Lowercase first letter from fact
+    fact = fact.charAt(0).toLowerCase() + fact.slice(1);
+    console.log('First letter of fact was lowercased');
     
     // Capitalize the first letter after '.', '!', or '?'
     fact = fact.replace(/([.!?])\s*(\w)/g, (m, p1, p2) => p1 + " " + p2.toUpperCase());
@@ -278,9 +246,6 @@ function processFact(fact) {
     fact = fact.replace(/([,!.?])(\w)/g, "$1 $2");
     console.log("Space added between punctuation");
 
-    //Lowercase first letter from fact
-    fact = fact.charAt(0).toLowerCase() + fact.slice(1);
-
     return fact;
 }
 
@@ -288,12 +253,12 @@ function processFact(fact) {
 //Add facts manually to facts
 function addFact(mood, year, fact) {
     mood = mood.toLowerCase();
-    console.log("mood converted to lower case");
+    console.log("Mood converted to lower case");
 
     fact = processFact(fact);
     console.log("Fact processed");
 
-    fact = `In ${year}, ${fact}`;
+    fact = `In ${year}, ${fact}!`;
     console.log("Fact converted to string");
 
     if (!facts[mood]) {
@@ -312,4 +277,7 @@ function addFact(mood, year, fact) {
 }
 
 // Running program
+addFact('AdVeNtUrOus', 2097, "Explorers find an underwater city in the Mariana Trench, inhabited by energy-sharing aquatic humanoids")
+factFactory();
+factFactory();
 factFactory();
