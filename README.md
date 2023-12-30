@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Fictional Facts Generator is a whimsical JavaScript program designed to create fun and imaginative facts based on random combinations of predefined elements. The facts are categorized into two moods: `dramatic` and `funny`. Each generated fact is a unique blend of a randomly chosen year, scenario, manner, and reason.
+The Fictional Facts Generator is a whimsical JavaScript program and marks my first off-platform project for Codecademy. This program is creatively designed to generate fun and imaginative facts by randomly combining predefined elements. The facts are categorized into two moods: dramatic and funny. Each generated fact is a unique concoction, blending a randomly chosen year, scenario, manner, and reason, showcasing my initial foray into JavaScript programming.
 
 ## Features
 
