@@ -266,5 +266,50 @@ const factFactory = () => {
     }
 }
 
+
+// Convert fact (added manually) to factFactory template.
+function processFact(fact) {
+    
+    // Capitalize the first letter after '.', '!', or '?'
+    fact = fact.replace(/([.!?])\s*(\w)/g, (m, p1, p2) => p1 + " " + p2.toUpperCase());
+    console.log("Letter was capitalised");
+    
+    // Insert a space after ',', '.', '!', or '?'
+    fact = fact.replace(/([,!.?])(\w)/g, "$1 $2");
+    console.log("Space added between punctuation");
+
+    //Lowercase first letter from fact
+    fact = fact.charAt(0).toLowerCase() + fact.slice(1);
+
+    return fact;
+}
+
+
+//Add facts manually to facts
+function addFact(mood, year, fact) {
+    mood = mood.toLowerCase();
+    console.log("mood converted to lower case");
+
+    fact = processFact(fact);
+    console.log("Fact processed");
+
+    fact = `In ${year}, ${fact}`;
+    console.log("Fact converted to string");
+
+    if (!facts[mood]) {
+        facts[mood] = [fact];
+        console.log("Mood created and fact pushed");
+        console.log(fact);
+    } else {
+        if (!facts[mood].includes(fact)) {
+            facts[mood].push(fact);
+            console.log("Mood already existed and fact pushed");
+            console.log(fact);
+        } else {
+            console.log("Fact already exists under this mood.");
+        }
+    }
+}
+
 // Running program
 factFactory();
