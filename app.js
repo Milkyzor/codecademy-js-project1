@@ -3,7 +3,7 @@
 
 1 - Fictional Facts Generator.
 
-2 - Facts will be based on When? What? Why? And how it happened? Dramatic or Funny Facts?
+2 - Facts will be based on When? What? Why? And how it happened? Dramatic or Funny Facts
         Facts -> Dramatic? Funny? -> When? What? Why? How? -> Fact (return string)
             Futuristic World > Single Sentences > Build Fact Template > Create list of elements > Need to make sense together
                 `In ${year}, ${what} ${how}. ${why}!`
@@ -13,10 +13,13 @@
 4 - Create and array of strings for each category.
 
 5 - Functions:
-        randomSelector();
-        submitString(category);
+        randomSelector(array);
         pickMood();
-        createFact(mood, when, what, why, how);
+        factFactory (mood, {when, what, why, how});
+            isFactRepetitive(mood, when, what, why, how)
+            doesFactExist(fact, facts);
+            pushAndReturFact(fact);
+        submitString(category);
 
 6 - Run your program multiple times and check for varied and random outputs.
 
@@ -30,7 +33,7 @@
 */
 
 
-//Elements to work
+// ARRAYS TO WORK
 let years = [2052, 2073, 2056, 2080, 2059, 2030, 2091, 2093, 2075, 2054, 2033, 2087, 2099, 2086, 2088, 2069, 2079, 2044, 2050, 2066, 2034, 2072, 2084, 2089, 2038, 2032, 2057, 2081, 2062, 2074, 2082, 2040, 2077, 2098, 2070, 2042, 2036, 2055, 2045, 2067];
 
 let whatDramatic = [
@@ -202,9 +205,49 @@ let whyFunny = [
 ];
 
 
+// Existing moods:
+let mood = ['funny', 'dramatic'];
+
+
+// Facts already created
+let facts = [];
+
+
+
+
+
+// FUNCTIONS
+// Selects a randomom element of the Array
+const randomSelector = (array) => {
+    return array[Math.floor(Math.random() * array.length)];
+}
+
+// Picks a random mood
+const pickMood = () => {
+    const choosenMood = randomSelector(mood);
+    return choosenMood;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Example of funny fact:
-console.log(`In ${years[Math.floor(Math.random() * years.length)]}, ${whatDramatic [Math.floor(Math.random() * whatDramatic .length)]} ${howDramatic [Math.floor(Math.random() * howDramatic .length)]}. ${whyDramatic [Math.floor(Math.random() * whyDramatic .length)]}!`);
+// console.log(`In ${years[Math.floor(Math.random() * years.length)]}, ${whatDramatic [Math.floor(Math.random() * whatDramatic .length)]} ${howDramatic [Math.floor(Math.random() * howDramatic .length)]}. ${whyDramatic [Math.floor(Math.random() * whyDramatic .length)]}!`);
 
 // Example of dramatic fact:
-console.log(`In ${years[Math.floor(Math.random() * years.length)]}, ${whatFunny[Math.floor(Math.random() * whatFunny.length)]} ${howFunny[Math.floor(Math.random() * howFunny.length)]}. ${whyFunny[Math.floor(Math.random() * whyFunny.length)]}!`);
+// console.log(`In ${years[Math.floor(Math.random() * years.length)]}, ${whatFunny[Math.floor(Math.random() * whatFunny.length)]} ${howFunny[Math.floor(Math.random() * howFunny.length)]}. ${whyFunny[Math.floor(Math.random() * whyFunny.length)]}!`);
+
+// Example with function
+// console.log(`In ${randomSelector(years)}, ${randomSelector(whatFunny)} ${randomSelector(howFunny)}. ${randomSelector(whyFunny)}!`);
